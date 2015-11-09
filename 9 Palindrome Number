@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+
+         if(x<0) return false;
+
+         int div1, div2;
+         
+         div1 = 1;
+         
+         while(x/div1 >= 10){ div1 *= 10;}
+         
+         div2 = 1;
+         
+         while(div1 > div2)
+         {
+             if((x/div1)%10 != (x/div2)%10) return false;
+  
+             div1 /= 10;
+             div2 *= 10;
+         }
+         return true;
+    }
+};
