@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool isHappy(int n) {
+        
+        int tmp;
+        int i = 0;
+        
+        while(n)
+        {
+            if(n == 1) return 1;
+            if(n == 4) return 0; //must be four
+            tmp = 0;
+            while(n)
+            {
+                tmp += (n%10)*(n%10);
+                n = n/10;
+            }
+            n = tmp;
+        }
+        
+    }
+};
