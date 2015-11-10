@@ -1,0 +1,41 @@
+class Queue {
+public:
+    // Push element x to the back of queue.
+    void push(int x) {
+        
+        Queue *newnode = new Queue;
+        newnode->data = x;
+        newnode->next = NULL;
+        
+        if(!head) head = newnode;
+        else
+        {
+            Queue *cur = head;
+            while(cur->next) cur = cur->next;
+            cur->next = newnode;
+        }
+        
+    }
+
+    // Removes the element from in front of queue.
+    void pop(void) {
+            head = head->next;
+    }
+
+    // Get the front element.
+    int peek(void) {
+        if(!head) return NULL;
+        else return head->data;
+    }
+
+    // Return whether the queue is empty.
+    bool empty(void) {
+        if(!head) return 1;
+        else return 0;
+    }
+    
+private:
+       int data;
+       Queue *next;
+       Queue *head = NULL;
+};
